@@ -1,5 +1,6 @@
 /*
-두 배열의 비교해서 중복을 제거하는 문제
+Compare two arrays and return a new array with any items only found in one of the two given arrays,
+but not both. In other words, return the symmetric difference of the two arrays.
 
 - 두 배열을 비교하기 쉽게 하나로 합친다음 filter 메소드를 사용해 값을 걸러준다.
 - 배열을 합치는 방법으로는 concat을 사용할 수도 있지만 여기서는 구조 분해 할당을 사용해 두 배열을 하나로 만들었다.
@@ -16,4 +17,6 @@ function diffArray(arr1, arr2) {
   return newArr;
 }
 
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); // [4]
+console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])); // ["piglet", 4]
+console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly"])); // [1, "calf", 3, "piglet", 7, "filly"]
