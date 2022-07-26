@@ -17,7 +17,7 @@
 
 ## 3. 표기법
 
-### O(1) - constane time
+### O(1) - constant time
 
 입력 데이터의 크기와 상관없이 언제나 일정한 시간이 걸리는 알고리즘을 말한다.  
 배열의 크기에 상관없이 언제나 일정한 속도로 값을 반환하고 이런 경우에 'O(1)의 시간 복잡도를 가진다`라고 말한다.
@@ -28,6 +28,16 @@ function constant(arr) {
   console.log(arr[0]); // 배열의 길이가 얼마든지 상관없다.
 }
 ```
+
+```javascript
+function logAtMost5(n) {
+  for (let i = 1; i <= Math.min(5, n); i++) {
+    console.log(i);
+  }
+}
+```
+
+5보다 큰 수가 들어오면 무조건 5가 출력된다. 즉, 최대 연산의 최대 갯수는 5가 된다.
 
 ### O(n) - linear time
 
@@ -42,6 +52,17 @@ function constant(arr) {
   }
 }
 ```
+
+```javascript
+function logAtLeast5(n) {
+  for (let i = 1; i <= Math.max(5, n); i++) {
+    console.log(i);
+  }
+}
+```
+
+최소 연산값은 5가되고 5보다 큰 수가 들어오면 해당 수만큼 연산의 수가 늘어난다.  
+&rarr; 즉, n의 값은 어떤값이든 될 수 있고 5를 넘어간다면 n의 값에 비례해 연산의 객수가 늘어난다.
 
 ### O(n2) - quadratic time
 
